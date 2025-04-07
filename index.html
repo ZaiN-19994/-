@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>ادخل كلمة السر</title>
+  <style>
+    body { background: #000; color: #fff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    #loginBox { text-align: center; }
+    input { padding: 10px; font-size: 16px; }
+    button { padding: 10px 20px; font-size: 16px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+<div id="loginBox">
+  <h2>ادخل كلمة السر</h2>
+  <input type="password" id="password" placeholder="••••••">
+  <br>
+  <button onclick="checkPassword()">دخول</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<script>
+  const encodedPassword = "bXlwYXNzMTIz"; // Base64 of your password
+
+  // التحقق من كلمة السر
+  function checkPassword() {
+    let input = document.getElementById("password").value;
+    let decoded = atob(encodedPassword); // فك التشفير من Base64
+    if (input === decoded) {
+      window.location.href = "main.html"; // إذا كانت كلمة السر صحيحة، يتم التوجيه للصفحة الرئيسية
+    } else {
+      window.location.href = "https://www.google.com"; // التوجيه إلى جوجل إذا كانت كلمة السر غير صحيحة
+    }
+  }
+
+  // إذا حاول أحد الدخول على الـ HTML مباشرة، يتم التوجيه إلى جوجل
+  window.onload = function() {
+    if (window.location.href.includes("login.html")) {
+      document.body.onkeydown = function(event) {
+        if (event.key === "F12" || event.key === "Ctrl+Shift+I" || event.key === "Ctrl+U") {
+          window.location.href = "https://www.google.com"; // التوجيه إلى جوجل في حال محاولة فتح الأدوات أو الكود
+        }
+      };
+    }
+  };
+</script>
+
+</body>
+</html>
