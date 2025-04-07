@@ -50,7 +50,7 @@
 
 <script>
   // الكود المتعلق بكلمة السر
-  const encodedPassword = "bXlwYXNzMTIz"; // Base64 of your password
+  const encodedPassword = "${{ secrets.MY_PASSWORD }}"; // Base64 of your password
 
   function checkPassword() {
     let input = document.getElementById("password").value;
@@ -59,7 +59,7 @@
       localStorage.setItem("loggedIn", "true"); // حفظ حالة الدخول
       window.location.href = "main.html"; // الانتقال للصفحة الرئيسية
     } else {
-      window.location.href = "https://rave.watch/dQtKT";
+      window.location.href = "https://www.google.com/";
     }
   }
 
