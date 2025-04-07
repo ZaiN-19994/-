@@ -1,62 +1,60 @@
 <!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <title> w </title>
-  <script src="https://cdn.jwplayer.com/libraries/IDzF9Zmk.js"></script>
-  <style>
-    html, body { margin: 0; padding: 0; background-color: #000; height: 100%; }
-    #vplayer { width: 100%; height: 100%; }
-  </style>
-</head>
-<body>
-  <div id="vplayer"></div>
-  <script>
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    document.onkeydown = function(e) {
-      if (e.keyCode == 123) return false;
-      if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
-      if (e.ctrlKey && e.key === 'u') return false;
-    };
-
-    // تحقق إذا كان المستخدم دخل كلمة السر
-    if (localStorage.getItem("loggedIn") !== "true") {
-      window.location.href = "https://i.giphy.com/YwCbGTL2dKWpMH5VMr.webp"; // لو مافيش حالة دخول، توجيه لصفحة الدخول
-    } else {
-      var _0x1 = jwplayer;
-_0x1("vplayer").setup({
-     image: "https://m.media-amazon.com/images/M/MV5BYzA3MzNlZTItNjQ3Mi00MTUwLWFmZTktNGVjYTYwNWFkMzI5XkEyXkFqcGc@._V1_.jpg",
-    sources: [{
-      file:"https://master.c.scdns.io/stream/v2/gWk0cXeLg8JghXMm7F0lVA/1744022608/normal/0/41.37.222.96/no/01d7b660408b6eae4cd057a54d3685e2/web184.faselhd.cafe/master.m3u8",
-      label:"480p"
-    }, {
-      file:"",
-      label:"320p"
-    }],
-    width: "100%",
-    height: "100%",
-    stretching: "exactfit",
-    duration: "86400",
-    preload: 'auto',
-    androidhls: "true",
-    hlshtml: "true",
-    primary: "html5",
-    startparam: "start",
-    tracks: [],
-    sharing: {
-      code: "%3CIFRAME SRC%3D%22https%3A%2F%2Fv.aflam.news%2Fembed-73tpzp0ge3nl.html%22 FRAMEBORDER%3D0 MARGINWIDTH%3D0 MARGINHEIGHT%3D0 SCROLLING%3DNO WIDTH%3D640 HEIGHT%3D360 allowfullscreen%3E%3C%2FIFRAME%3E",
-      link: "https://v.aflam.news/73tpzp0ge3nl.html",
-      sites: []
-    },
-});
-
-          abouttext: "",
-          aboutlink: "https://v.aflam.news",
-          cast: {},
-          playbackRateControls: "true",
-          playbackRates: [0.5, 1, 2, 3]
-      });
-    }
-  </script>
-</body>
-</html>
+ <html lang="ar">
+ <head>
+   <meta charset="UTF-8">
+   <title> || 11 </title>
+   <script src="https://cdn.jwplayer.com/libraries/IDzF9Zmk.js"></script>
+   <style>
+     html, body { margin: 0; padding: 0; background-color: #000; height: 100%; }
+     #vplayer { width: 100%; height: 100%; }
+   </style>
+ </head>
+ <body>
+   <div id="vplayer"></div>
+   <script>
+     document.addEventListener('contextmenu', event => event.preventDefault());
+     document.onkeydown = function(e) {
+       if (e.keyCode == 123) return false;
+       if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
+       if (e.ctrlKey && e.key === 'u') return false;
+     };
+ 
+     // تحقق إذا كان المستخدم دخل كلمة السر
+     if (localStorage.getItem("loggedIn") !== "true") {
+       window.location.href = "https://i.giphy.com/YwCbGTL2dKWpMH5VMr.webp"; // لو مافيش حالة دخول، توجيه لصفحة الدخول
+     } else {
+       var _0x1 = jwplayer;
+       _0x1("vplayer").setup({
+           sources: [{
+             file:"https://master.c.scdns.io/stream/v2/gWk0cXeLg8JghXMm7F0lVA/1744022608/normal/0/41.37.222.96/no/01d7b660408b6eae4cd057a54d3685e2/web184.faselhd.cafe/master.m3u8",
+             label:"480p"
+           }, {
+             file:"",
+             label:"320p"
+           }],
+           image: "https://m.media-amazon.com/images/M/MV5BYzA3MzNlZTItNjQ3Mi00MTUwLWFmZTktNGVjYTYwNWFkMzI5XkEyXkFqcGc@._V1_.jpg",
+           width: "100%",
+           height: "100%",
+           stretching: "exactfit",
+           duration: "86400",
+           preload: 'auto',
+           androidhls: "true",
+           hlshtml: "true",
+           primary: "html5",
+           startparam: "start",
+           tracks: [],
+           sharing: {
+             code: "%3CIFRAME SRC%3D%22https%3A%2F%2Fv.aflam.news%2Fembed-73tpzp0ge3nl.html%22 FRAMEBORDER%3D0 MARGINWIDTH%3D0 MARGINHEIGHT%3D0 SCROLLING%3DNO WIDTH%3D640 HEIGHT%3D360 allowfullscreen%3E%3C%2FIFRAME%3E",
+             link: "https://v.aflam.news/73tpzp0ge3nl.html",
+             sites: []
+           },
+           abouttext: "",
+           aboutlink: "https://v.aflam.news",
+           cast: {},
+           playbackRateControls: "true",
+           playbackRates: [0.5, 1, 2, 3]
+       });
+     }
+   </script>
+ </body>
+ </html>
