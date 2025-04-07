@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
@@ -23,27 +23,16 @@
 <script>
   const encodedPassword = "bXlwYXNzMTIz"; // Base64 of your password
 
-  // التحقق من كلمة السر
   function checkPassword() {
     let input = document.getElementById("password").value;
-    let decoded = atob(encodedPassword); // فك التشفير من Base64
+    let decoded = atob(encodedPassword);
     if (input === decoded) {
-      window.location.href = "main.html"; // إذا كانت كلمة السر صحيحة، يتم التوجيه للصفحة الرئيسية
+      localStorage.setItem("loggedIn", "true"); // حفظ حالة الدخول
+      window.location.href = "main.html"; // الانتقال للصفحة الرئيسية
     } else {
-      window.location.href = "https://www.google.com"; // التوجيه إلى جوجل إذا كانت كلمة السر غير صحيحة
+      window.location.href = "https://www.google.com";
     }
   }
-
-  // إذا حاول أحد الدخول على الـ HTML مباشرة، يتم التوجيه إلى جوجل
-  window.onload = function() {
-    if (window.location.href.includes("login.html")) {
-      document.body.onkeydown = function(event) {
-        if (event.key === "F12" || event.key === "Ctrl+Shift+I" || event.key === "Ctrl+U") {
-          window.location.href = "https://www.google.com"; // التوجيه إلى جوجل في حال محاولة فتح الأدوات أو الكود
-        }
-      };
-    }
-  };
 </script>
 
 </body>
