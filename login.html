@@ -49,13 +49,13 @@
 </div>
 
 <script>
-  // استخدام الكلمة السرية المخزنة في GitHub Secrets
-  const secretPassword = process.env.MY_PASSWORD; // متغير البيئة 
+  // الكود المتعلق بكلمة السر
+  const encodedPassword = "bXlwYXNzMTIz"; // Base64 of your password
 
   function checkPassword() {
     let input = document.getElementById("password").value;
-    
-    if (input === secretPassword) {
+    let decoded = atob(encodedPassword);
+    if (input === decoded) {
       localStorage.setItem("loggedIn", "true"); // حفظ حالة الدخول
       window.location.href = "main.html"; // الانتقال للصفحة الرئيسية
     } else {
