@@ -1,0 +1,102 @@
+<!DOCTYPE html> 
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>🔹🪄🔹</title>
+  <style>
+    body { 
+      background: #000; 
+      color: #fff; 
+      font-family: sans-serif; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh;
+      margin: 0;
+    }
+    #loginBox { 
+      text-align: center; 
+      z-index: 2; 
+      position: relative;
+    }
+    input { 
+      padding: 10px; 
+      font-size: 16px; 
+    }
+    button { 
+      padding: 10px 20px; 
+      font-size: 16px; 
+      margin-top: 10px; 
+    }
+    canvas { 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      z-index: 1; 
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="matrixCanvas"></canvas>
+
+<div id="loginBox">
+  <h2></h2>
+  <input type="password" id="password" placeholder="🔹🔹🔹🪄🔹🔹🔹">
+  <br>
+  <button onclick="checkPassword()">😈</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<script>
+  // الكود المتعلق بكلمة السر
+  const encodedPassword = "bXlwYXNzMTIz"; // Base64 of your password
+
+  function checkPassword() {
+    let input = document.getElementById("password").value;
+    let decoded = atob(encodedPassword);
+    if (input === decoded) {
+      localStorage.setItem("loggedIn", "true"); // حفظ حالة الدخول
+      window.location.href = "main.html"; // الانتقال للصفحة الرئيسية
+    } else {
+      window.location.href = "https://www.google.com/";
+    }
+  }
+
+  // الكود الخاص بالخلفية المتحركة "ماتريكس"
+  const canvas = document.getElementById('matrixCanvas');
+  const ctx = canvas.getContext('2d');
+  const columns = canvas.width = window.innerWidth;
+  const rows = canvas.height = window.innerHeight;
+  const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+  const fontSize = 16;
+  const drops = [];
+  
+  for (let x = 0; x < columns; x++) {
+    drops[x] = 1;
+  }
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = "#0F0";
+    ctx.font = fontSize + "px monospace";
+    
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 33); // refresh the animation every 33ms
+</script>
+
+</body>
+</html>
