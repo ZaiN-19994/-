@@ -68,8 +68,8 @@
   const ctx = canvas.getContext('2d');
   const columns = canvas.width = window.innerWidth;
   const rows = canvas.height = window.innerHeight;
-  const chars = "🔹🔹🔹🪄🔹🔹🔹";
-  const fontSize = 16;
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+  const fontSize = 18;
   const drops = [];
   
   for (let x = 0; x < columns; x++) {
@@ -80,7 +80,7 @@
     ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-    ctx.fillStyle = "#1E5AA8";
+    ctx.fillStyle = "#0F0";
     ctx.font = fontSize + "px monospace";
     
     for (let i = 0; i < drops.length; i++) {
